@@ -31,22 +31,7 @@ void ATankAIController::BeginPlay()
 {
 	Super::BeginPlay();
 
-	auto PlayerTank = GetPlayerTank();
-	//FVector MyCharacter = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
-
-
-
-	if (PlayerTank) {
-		//UE_LOG(LogTemp, Warning, TEXT("AIContoller found a playere Tank:%s"), *(PlayerTank->GetName()));
-		//UE_LOG(LogTemp, Warning, TEXT("Player Tank:%f"), *MyCharacter.ToString());
-	}
-	else {
-		//UE_LOG(LogTemp, Warning, TEXT("AIController can't find player tank"));
-	}
-
-
-
-
+	
 }
 
 ATank* ATankAIController::GetControlledTank() const
@@ -61,5 +46,6 @@ ATank * ATankAIController::GetPlayerTank() const
 	auto PlayerPawn = GetWorld()->GetFirstPlayerController()->GetPawn();
 
 	if (!PlayerPawn) { return nullptr; }
+
 	return Cast<ATank>(PlayerPawn);
 }

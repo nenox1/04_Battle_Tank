@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
+#include "Tank.h"
 #include "TankPlayerController.h"
 
 
@@ -38,8 +38,6 @@ void ATankPlayerController::AimTowardsCrosshair()
 	if (!GetControlledTank()) { return; }
 
 	FVector HitLocation;//Out parametar
-	//float LaunchSpeed = GetControlledTank()->GetLaunchSpeed();
-
 	
 	if (GetSightRayHitLocation(HitLocation))//Has "side-effect", is going to line trace 
 	{
@@ -51,8 +49,6 @@ void ATankPlayerController::AimTowardsCrosshair()
 
 bool ATankPlayerController::GetSightRayHitLocation(FVector & HitLocation) const
 {
-	//HitLocation = FVector(1.0);
-
 	int32 ViewportSizeX, ViewportSizeY;
 	GetViewportSize(ViewportSizeX, ViewportSizeY);
 
