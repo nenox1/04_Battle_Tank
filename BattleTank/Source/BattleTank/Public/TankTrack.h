@@ -21,6 +21,8 @@ public:
 	void SetThrottle(float Throttle);
 	
 
-
+	//Maxforce per track, in Newtons 
+	UPROPERTY(EditDefaultsOnly)
+	float TrackMaxDrivingForce = 400000;
 	
 };
